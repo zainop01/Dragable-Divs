@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoother Draggable Divs with GSAP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"> -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="top px-2 d-flex justify-content-between">
+        <div class="logo fs-5 mt-1">
+          op
+        </div>
+        <div class="logo-name fs-5 ms-4 mt-1">zainop</div>
+        <div class="controls mt-2">
+          <i class="fa-regular fa-window-minimize"></i>
+          <i id="fullscreen-icon" class="fa-regular fa-square ps-2 fullscreen-icon"></i>
+          <i class="fa-solid fa-xmark px-2"></i>  
+        </div>
+      </div>
+      <div class="bottom d-flex justify-content-between align-items-center px-3">
+       <button class="btn"><div class="color"></div></button>
+        <div class="country ms-5">Based in Pakistan</div>
+        <div class="links gap-2 d-flex">
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+      <div class="left d-flex justify-content-center align-items-center">
+        <nav class="d-flex flex-column align-items-center gap-3">
+          <a href=""><i class="fa-solid fa-house"></i></a>
+          <a href=""><i class="fa-regular fa-user"></i></a>
+          <a href=""><i class="fa-solid fa-briefcase"></i></a>
+          <a href=""><i class="fa-regular fa-envelope"></i></a>
+        </nav>
+      </div>
+    <div class="content">
+      <div class="herosection">
+        <div class="text-area d-flex flex-column justify-content-center align-items-center h-100">
+          <h1>Hi, I'm Zain, a <span style="color: yellowgreen;">creative</span> <span class="text-changing"></span><span class="blinking-cursor">|</span></h1>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis rerum quod libero suscipit illum voluptatibus quidem modi autem nam corporis, harum sunt neque dolor iusto quisquam architecto doloremque voluptates ut.</p>
+          
+        </div>
+       <div class="bg-img position-absolute">
+        <img class="img-fluid" src="./Own img n 1.png" alt="">
+       </div>
+       <div class="bg-text">
+        <h1>zain</h1>
+       </div>
+      </div>
+    <div class="container">
+      <div class="draggable potrait" id="potrait">
+        <div class="card-top-potrait">
+          <h3>Potrait</h3>
+          <div class="icons">
+            <i class="fa-regular fa-window-minimize"></i>
+            <i class="fa-regular fa-window-maximize"></i>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <img src="./WhatsApp Image 2024-04-28 at 8.20.06 PM.png" alt="" />
+      </div>
+      <!-- about -->
+      <div class="draggable about-me" id="about-me">
+        <div class="card-top-about-me">
+          <h3>about-me</h3>
+          <div class="icons">
+            <i class="fa-regular fa-window-minimize"></i>
+            <i class="fa-regular fa-window-maximize"></i>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+      </div>
+      <div class="about-content">
+        <!-- point 1 -->
+        <p><span class="points">1 -</span>Nice to meet you! I'm Zain, I'm a
+           <span style="color: greenyellow;">Web Developer,
+          </span> <span style="color: skyblue;">UI/UX Designer,
+          </span> <span style="color: orange;">Video Editor,
+          </span> <span style="color: rgb(186, 113, 255);">Graphic Designer.</span></p>
+          <!-- point 2 -->
+          <p><span class="points">2 -</span>I'm passionate about both
+            <span style="color: yellow;">web design
+           </span>and <span style="color: rgb(255, 119, 119);">web development
+           </span>in all of its aspects. This is where both my <span style="color: rgb(150, 132, 255);">technical
+           </span>and <span style="color: rgb(255, 57, 166);">creative </span>skills can be used at their best.</p>
+           <!-- point 3 -->
+           <p><span class="points">3 -</span>I bring my
+            <span style="color: greenyellow;">expertise
+           </span>in my collaborations with <span style="color: yellow;">web agencies,
+           </span> <span style="color: rgb(150, 132, 255);">design studios
+           </span>and other <span style="color: rgb(255, 57, 166);"> freelance professionals </span>in the feild to add value to the project I work on.</p>
+           <!-- point 4 -->
+           <p><span class="points">4 -</span>
+            <span style="color: greenyellow;">Coding 
+           </span>for me is not just my work, I like <span style="color: rgb(255, 57, 166);">experimenting
+           </span>with many <span style="color: yellow;">technologies
+           </span>and I also maintain some <span style="color: rgb(255, 57, 166);">personal projects. </span>Whenever I can, I like to
+          contribute to <span style="color: greenyellow;">open-source</span> to give back to the community.
+          </p>
+      </div>
+
+      <!-- <div class="draggable work" id="work">Div 4</div>
+      <div class="draggable hobbies" id="hobbies">Div 5</div> -->
+    </div>
+    <!-- social -->
+    <div class="draggable social" id="social">
+      <div class="card-top-social">
+        <h3>me-online</h3>
+        <div class="icons">
+          <i class="fa-regular fa-window-minimize"></i>
+          <i class="fa-regular fa-window-maximize"></i>
+          <i class="fa-solid fa-xmark"></i>
+      </div>
+
+    </div>
+    <div class="social-links">
+      <div class="mb-1"><span class="points">1</span><a href="#" target="_blank">linkdin <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="mb-1"><span class="points">2</span><a href="#" target="_blank">github <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="mb-1"><span class="points">3</span><a href="#" target="_blank">instagram <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="mb-1"><span class="points">4</span><a href="#" target="_blank">facebook <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="mb-1"><span class="points">5</span><a href="#" target="_blank">twitter <i class="fa-solid fa-arrow-right"></i></a></div>   
+    </div>
+    </div>
+
+    <!-- content Div -->
+  </div>
+
+
+  <div class="corner top-left"></div>
+  <div class="corner bottom-right"></div>
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const roles = ['developer', 'designer', 'editor'];
+    let index = 0;
+    let charIndex = 0;
+    const spanElement = document.querySelector('.text-area h1 .text-changing');
+    const cursorElement = document.querySelector('.blinking-cursor');
+    
+    function type() {
+      if (charIndex < roles[index].length) {
+        spanElement.textContent += roles[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 150); // Adjust typing speed here
+      } else {
+        setTimeout(erase, 2000); // Pause before erasing
+      }
+    }
+    
+    function erase() {
+      if (charIndex > 0) {
+        spanElement.textContent = roles[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 100); // Adjust erasing speed here
+      } else {
+        index = (index + 1) % roles.length;
+        setTimeout(type, 500); // Pause before typing the next role
+      }
+    }
+    
+    setTimeout(type, 1000); // Initial delay before typing starts
+  });
+
+      const fullscreenIcon = document.getElementById('fullscreen-icon');
+  
+      fullscreenIcon.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().then(() => {
+            fullscreenIcon.classList.remove('fa-square');
+            fullscreenIcon.classList.add('fa-window-restore');
+          }).catch(err => {
+            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+          });
+        } else {
+          document.exitFullscreen().then(() => {
+            fullscreenIcon.classList.remove('fa-window-restore');
+            fullscreenIcon.classList.add('fa-square');
+          }).catch(err => {
+            console.error(`Error attempting to exit full-screen mode: ${err.message} (${err.name})`);
+          });
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+      const colorDiv = document.querySelector('.btn');
+      console.log(colorDiv);
+      const topLeft = document.getElementsByClassName('corner')[0];
+      const bottomRight = document.getElementsByClassName('corner')[1];
+
+      if (colorDiv) {
+        colorDiv.addEventListener('click', () => {
+          console.log("colorDiv", colorDiv);
+          
+          if (topLeft) {
+            if (topLeft.classList.contains('corner')) {
+              topLeft.classList.remove('corner');
+              topLeft.classList.add('dimmed');
+            } else {
+              topLeft.classList.remove('dimmed');
+              topLeft.classList.add('corner');
+            }
+          }
+
+          if (bottomRight) {
+            if (bottomRight.classList.contains('corner')) {
+              bottomRight.classList.remove('corner');
+              bottomRight.classList.add('dimmed');
+            } else {
+              bottomRight.classList.remove('dimmed');
+              bottomRight.classList.add('corner');
+            }
+          }
+        });
+      }
+    });
+
+  //     document.querySelector('.color').addEventListener('click', function() {
+  //   document.querySelectorAll('.corner').forEach(function(corner) {
+  //     corner.classList.add('dimmed');
+  //   });
+  // });
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
+  </body>
+</html>
